@@ -1,0 +1,16 @@
+body {
+    font-family: "Segoe UI", sans-serif; 
+    background-image: url(https://i.postimg.cc/FFVQZ96R/1da275b7-3322-46fa-b533-713d95eeca39.png);
+}
+header {
+  height: 100vh; /* хедер занимает весь экран */
+  background-image: url(https://i.postimg.cc/FFVQZ96R/1da275b7-3322-46fa-b533-713d95eeca39.png);
+    background-size: 0.09cm ;     
+    background-repeat: round;
+}
+
+main {
+  min-height: 100vh; /* мейн тоже на весь экран */
+  background: url('https://www.meme-arsenal.com/memes/b9debf92f437056df6181aa7c99e4bd8.jpg') center/cover;
+  padding-top: 20px;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ithinkitsgallery2005</title>
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+  <main>
+    <div class="recipe-page">
+      <div class="back-wrapper">
+        <a href="ithinkitsgallery.html" class="back-button">← Назад</a>
+      </div>
+
+      <div class="gallery-container">
+        <div class="gallery-image">
+          <img src="https://i.postimg.cc/FFVQZ96R/1da275b7-3322-46fa-b533-713d95eeca39.png" alt="Картина">
+        </div>
+
+        <div class="gallery-info">
+          <h1>«Ирон макс 2005»</h1>
+          <p><strong>Автор:</strong> Ирон макс 2005</p>
+          <p> Самый лучший человек на Земле. Бизнесмен, миллионер, бедный, который добился успеха, богатый всю жизнь. Родился в 2015, но также в 2005 поменял своё имя на Ирон Макс 2005. Сирота. (Интересный факт: Бэтмен был вдохновлён Ироном Максом 2005). Играл в баксетбол с двух лет, ненавидит баскетбол, на самом деле не кот. Как выглядит Ирон Макс 2005 — неизвестно, но автору показалось, что эта картинка очень крутая, и он полетел на Луну, чтобы доказать всему миру, что лазанья с мясом из творога — это хорошая идея.
+(Интересный факт: я был вдохновлён Ироном Максом 2005).
+Но потом Ирон Макс 2005 года упал из-за камешка и отправился в сигма-больницу на Марсе. Но Ирон Макс 2005 года сам хотел в сигма-больницу, и я порезал доски и передал ему. После этого я спросил: почему сейчас вечер 2005?
+И он ответил: сейчас апокалипсис. А это сказал Шекспир Ирон Макс 2005.
+Я не знаю, что такое Шекспир, но мне кажется, это такой салат, как салат «Греческая сигма».
+Ирон Макс 2005 имеет фамилию «2005» и IQ больше 2005, потому что он так сказал — и все ему поверили. 2005.
+Я потерял смысл. 2005.
+Пошли играть в 2005. Пошли.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="footer-btn" id="footerBtn">Крутая кнопка Ирона Макса 2005 но тебе нужен код а я тебе не скажу его ахххахахах вот это я злой. Го поиграем в бравл сегодня? </div>
+
+  <!-- Окно для кода -->
+  <div id="codePrompt">
+    <h1>Введите код доступу</h1>
+    <input type="password" id="codeInput" placeholder="прпрчик">
+    <br>
+    <button id="submitCode">OK</button>
+    <p id="errorMsg">Неправильный код!</p>
+  </div>
+
+  <!-- Футер -->
+  <div class="footer-overlay" id="footerOverlay">
+    <h2>Узнайте про Ирона макса 2005 больше тут!</h2>
+    <a href="Ironmaks2005world.html">
+    <img src="https://i.postimg.cc/FFVQZ96R/1da275b7-3322-46fa-b533-713d95eeca39.png" alt="ironmaks2005">
+    </a>
+    <button id="closeFooter">Закрыть</button>
+  </div>
+
+  <script>
+    const footerBtn = document.getElementById("footerBtn");
+    const footerOverlay = document.getElementById("footerOverlay");
+    const closeBtn = document.getElementById("closeFooter");
+
+    const codePrompt = document.getElementById("codePrompt");
+    const codeInput = document.getElementById("codeInput");
+    const submitCode = document.getElementById("submitCode");
+    const errorMsg = document.getElementById("errorMsg");
+
+    const correctCode = "813742"; // 🔑 код
+
+    footerBtn.addEventListener("click", () => {
+      codePrompt.style.display = "block";
+      codeInput.value = "";
+      errorMsg.style.display = "none";
+    });
+
+    submitCode.addEventListener("click", () => {
+      if (codeInput.value === correctCode) {
+        codePrompt.style.display = "none";
+        footerOverlay.classList.add("active");
+      } else {
+        errorMsg.style.display = "block";
+      }
+    });
+
+    closeBtn.addEventListener("click", () => {
+      footerOverlay.classList.remove("active");
+    });
+  </script>
+</body>
+</html>

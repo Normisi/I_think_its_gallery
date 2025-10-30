@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ithinkitsgallery</title>
+  <link rel="stylesheet" href="gallery.css">
+  </head>
+<body>
+  <main>
+  <div class="recipe-page">
+    
+      <div class="back-wrapper">
+    <a href="ithinkitsgallery.html" class="back-button">← Назад</a>
+  </div>
+   <div class="gallery-container">
+    <div class="gallery-image">
+      <img src="https://i.postimg.cc/T1FkVSWV/image.png"  alt="Картина">
+    </div>
+
+    <div class="gallery-info">
+      <h1>«Очень крутая загадка, чтобы получить очень крутой код»</h1>
+      <p> Эта загадка очень крутая :sunglasses:
+</p>
+
+    </div>
+  </div>
+  </main>
+ <div class="footer-btn" id="footerBtn">
+    Ответ
+  </div>
+ <div id="codePrompt">
+    <h1>Вы точно хотите узнать ответ? напишите нет если хотите</h1>
+    <input type="password" id="codeInput" placeholder="Да">
+    <br>
+    <button id="submitCode">OK</button>
+    <p id="errorMsg">Неправильный ответ!</p>
+  </div>
+
+  <div class="footer-overlay" id="footerOverlay">
+    <h2> скибиди
+    </h2>
+    <img src="https://i.postimg.cc/mDFRB3wn/image.png" style="width: 800px;" alt="skibidi">
+ 
+
+    <button id="closeFooter">Закрыть</button>
+  </div>
+  
+<script>
+   const footerBtn = document.getElementById("footerBtn");
+    const footerOverlay = document.getElementById("footerOverlay");
+    const closeBtn = document.getElementById("closeFooter");
+
+    const codePrompt = document.getElementById("codePrompt");
+    const codeInput = document.getElementById("codeInput");
+    const submitCode = document.getElementById("submitCode");
+    const errorMsg = document.getElementById("errorMsg");
+
+    const correctCode = "нет"; // 🔑 код
+
+    footerBtn.addEventListener("click", () => {
+      codePrompt.style.display = "block";
+      codeInput.value = "";
+      errorMsg.style.display = "none";
+    });
+
+    submitCode.addEventListener("click", () => {
+      if (codeInput.value === correctCode) {
+        codePrompt.style.display = "none";
+        footerOverlay.classList.add("active");
+      } else {
+        errorMsg.style.display = "block";
+      }
+    });
+
+    closeBtn.addEventListener("click", () => {
+      footerOverlay.classList.remove("active");
+    });
+  </script>
+</body>
+</html>
