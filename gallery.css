@@ -260,8 +260,11 @@ h3 {
   z-index: 9999;       /* ниже кнопки, но поверх фона */
   display: block;
   border-radius: 0;
+  display:none
 }
 
 #loopGif.visible {
   opacity: 1;
+    display: block;
 }
+
