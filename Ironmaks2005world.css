@@ -14,3 +14,10 @@ main {
   background: url('https://www.meme-arsenal.com/memes/b9debf92f437056df6181aa7c99e4bd8.jpg') center/cover;
   padding-top: 20px;
 }
+.sigma {
+  min-height: 100vh; /* мейн тоже на весь экран */
+  background: aliceblue;
+  padding-top: 20px;
+}
+
+
