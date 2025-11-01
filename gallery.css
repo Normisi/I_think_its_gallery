@@ -267,4 +267,33 @@ h3 {
   opacity: 1;
     display: block;
 }
+#Guide {
+
+  top: 300px;       /* отступ сверху */
+  right: 20px;     /* отступ справа */
+  padding: 12px 25px;
+  font-size: 16px;
+  font-family: "Segoe UI", sans-serif;
+  border: 2px solid #444;
+  border-radius: 10px;
+  background-image: url(https://png.klev.club/uploads/posts/2024-03/png-klev-club-p-myataya-bumaga-png-1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 10000;  /* поверх всех элементов */
+}
+
+#Guide:hover {
+  transform: scale(1.05);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.bigpic {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;;
+}
+.bigpic:hover {
+transform: scale(1.5);
+}
+
 
