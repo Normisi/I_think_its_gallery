@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>yrellag
+  </title>
+  <link rel="stylesheet" href="yrellag.css">
+  </head>
+<body>
+  
+  <p class="demo">Улыбка🙂</p> 
+<button id="showGifBtn">Сдвг режим</button>
+<img id="loopGif" src="https://media1.tenor.com/m/1wZ88hrB5SwAAAAd/subway-surfer.gif" alt="gif" />
+
+  <h1> нитрак яерелаГ </h1>
+  <h2> нитрак яерелаг отЭ</h2>
+  <h3> :))))))))</h3>
+  <a href="verycoolguide.html">
+<button id="Guide">дйаГ</button>
+ </a>
+  <section class="popular">
+  <div class="grid">
+  <div class="card">
+     <a href="paint1.html">
+    <img src="https://i.postimg.cc/Fs9zNCSM/image.png" alt="1">
+   </a>
+    <p>пР БРО</p>
+  </div>
+  <div class="card">
+     <a href="paint2.html">
+    <img src="https://img.goodfon.ru/wallpaper/big/d/b4/trava-zelen-tekstury-tekstura-travy-priroda.webp" alt="2">
+     </a>
+    <p>Трава</p>
+  </div>
+  <div class="card">
+    <a href="paint3.html">
+    <img src="https://i.postimg.cc/7LCf8JR8/image.png" alt="3">
+    </a>
+    <p>Очень крутая загадка, чтобы получить очень крутой код</p>
+  </div>
+  <div class="card">
+    <a href="paint4.html">
+    <img src="https://thumbs.dreamstime.com/b/%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%BE%D0%B9-emoticon-%D1%83%D1%81%D0%BC%D0%B5%D1%88%D0%BA%D0%B8-26256350.jpg" alt="4">
+    </a>
+    <p>Улыбка🙂</p>
+  </div>
+  <div class="card">
+    <a href="paint5.html">
+    <img src="https://i.pinimg.com/originals/86/7d/1a/867d1a8204b3835beb21dec78f57504b.jpg" alt="5">
+    </a>
+    <p>Meowl</p>
+  </div>
+  <div class="card">
+    <a href="ironmaks2005.html">
+    <img src="https://i.postimg.cc/FFVQZ96R/1da275b7-3322-46fa-b533-713d95eeca39.png" alt="5">
+    </a>
+    <p>Ирон Макс 2005</p>
+  </div>
+</div>
+  </section>
+
+
+  <div class="footer-btn" id="footerBtn">
+    Про нас
+  </div>
+
+  
+  <div class="footer-overlay" id="footerOverlay">
+    <h2>Покупай полную игру в стиме!</h2>
+  <img src="https://i.postimg.cc/mk9dG1rb/image.png" alt="steam">
+  <h2> Музыка</h2> 
+ <audio id="bgMusic" src="https://pomf2.lain.la/f/a8xqlqj.mp3" loop></audio>
+
+  <button id="playButton">▶️ Включить музыку</button>
+
+  <div class="volume-box">
+    <label for="volumeControl">Громкость:</label>
+    <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.3">
+  </div>
+
+
+    <button id="closeFooter">Закрыть</button>
+  </div>
+  
+<script>
+    const footerBtn = document.getElementById("footerBtn");
+    const footerOverlay = document.getElementById("footerOverlay");
+    const closeBtn = document.getElementById("closeFooter");
+
+    footerBtn.addEventListener("click", () => {
+      footerOverlay.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      footerOverlay.classList.remove("active");
+    });
+    const music = document.getElementById('bgMusic');
+    const playButton = document.getElementById('playButton');
+    const volumeControl = document.getElementById('volumeControl');
+
+    music.volume = 0.3;
+
+    playButton.addEventListener('click', () => {
+      music.play().then(() => {
+        playButton.style.display = 'none';
+      }).catch(err => {
+        alert('Хз, чёт не получилось включить музыку.');
+      });
+    });
+
+    volumeControl.addEventListener('input', () => {
+      music.volume = volumeControl.value;
+    });
+    const showGifBtn = document.getElementById('showGifBtn');
+const loopGif = document.getElementById('loopGif');
+
+showGifBtn.addEventListener('click', () => {
+  loopGif.classList.toggle('visible');
+});
+
+  </script>
+</body>
+</html>
