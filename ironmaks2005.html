@@ -35,54 +35,74 @@
 
   <div class="footer-btn" id="footerBtn">Крутая кнопка Ирона Макса 2005 но тебе нужен код а я тебе не скажу его ахххахахах вот это я злой. Го поиграем в бравл сегодня? </div>
 
-  <!-- Окно для кода -->
-  <div id="codePrompt">
-    <h1>Введите код доступу</h1>
-    <input type="password" id="codeInput" placeholder="прпрчик">
-    <br>
-    <button id="submitCode">OK</button>
-    <p id="errorMsg">Неправильный код!</p>
-  </div>
+    <div id="codePrompt">
+  <h1>Введите код доступу</h1>
+  <input type="password" id="codeInput" placeholder="прпрчик">
+  <br>
+  <button id="submitCode">OK</button>
+  <p id="errorMsg">Неправильный код!</p>
+</div>
 
-  <!-- Футер -->
-  <div class="footer-overlay" id="footerOverlay">
-    <h2>Узнайте про Ирона макса 2005 больше тут!</h2>
-    <a href="Ironmaks2005world.html">
+<!-- Футеры для разных кодов -->
+<div class="footer-overlay" id="footerOverlay1">
+  <h2>Узнайте про Ironmaks2005 больше тут!</h2>
+  <a href="Ironmaks2005world.html">
     <img src="https://i.postimg.cc/FFVQZ96R/1da275b7-3322-46fa-b533-713d95eeca39.png" alt="ironmaks2005">
-    </a>
-    <button id="closeFooter">Закрыть</button>
-  </div>
+  </a>
+  <button class="closeFooter">Закрыть</button>
+</div>
 
-  <script>
-    const footerBtn = document.getElementById("footerBtn");
-    const footerOverlay = document.getElementById("footerOverlay");
-    const closeBtn = document.getElementById("closeFooter");
+<div class="footer-overlay" id="footerOverlay2">
+  <h2>Скоро...</h2>
+  <a href="yrellag.html">
+    <img src="">
+  </a>
+  <button class="closeFooter">Закрыть</button>
+</div>
 
-    const codePrompt = document.getElementById("codePrompt");
-    const codeInput = document.getElementById("codeInput");
-    const submitCode = document.getElementById("submitCode");
-    const errorMsg = document.getElementById("errorMsg");
+<div class="footer-overlay" id="footerOverlay3">
+  <h2>Бро, попробуй нормально, реши загадку на 3 картине</h2>
+  <button class="closeFooter">Закрыть</button>
+</div>
 
-    const correctCode = "813742"; // 🔑 код
+<script>
+  const footerBtn = document.getElementById("footerBtn");
+  const codePrompt = document.getElementById("codePrompt");
+  const codeInput = document.getElementById("codeInput");
+  const submitCode = document.getElementById("submitCode");
+  const errorMsg = document.getElementById("errorMsg");
 
-    footerBtn.addEventListener("click", () => {
-      codePrompt.style.display = "block";
-      codeInput.value = "";
-      errorMsg.style.display = "none";
+  // словарь кодов
+  const codes = {
+    "813742": "footerOverlay1",
+    "19-13-9-12-5": "footerOverlay2",
+    "прпрчик": "footerOverlay3"
+  };
+
+  footerBtn.addEventListener("click", () => {
+    codePrompt.style.display = "block";
+    codeInput.value = "";
+    errorMsg.style.display = "none";
+  });
+
+  submitCode.addEventListener("click", () => {
+    const entered = codeInput.value.trim();
+    const overlayId = codes[entered];
+
+    if (overlayId) {
+      codePrompt.style.display = "none";
+      document.getElementById(overlayId).classList.add("active");
+    } else {
+      errorMsg.style.display = "block";
+    }
+  });
+
+  // обработка всех кнопок закрытия
+  document.querySelectorAll(".closeFooter").forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.parentElement.classList.remove("active");
     });
-
-    submitCode.addEventListener("click", () => {
-      if (codeInput.value === correctCode) {
-        codePrompt.style.display = "none";
-        footerOverlay.classList.add("active");
-      } else {
-        errorMsg.style.display = "block";
-      }
-    });
-
-    closeBtn.addEventListener("click", () => {
-      footerOverlay.classList.remove("active");
-    });
-  </script>
+  });
+</script>
 </body>
 </html>
