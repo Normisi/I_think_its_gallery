@@ -19,5 +19,12 @@ main {
   background: aliceblue;
   padding-top: 20px;
 }
+.NOTsigma {
+  min-height: 100vh; 
+  background: rgb(181, 32, 32);
+  padding-top: 20px;
+}
+
+
 
 
