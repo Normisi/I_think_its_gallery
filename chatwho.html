@@ -133,7 +133,7 @@ h1 {
   // ключевые слова и ответы
   const keywords = [
     {
-      words: ["Не", "Улыбка", "улыбка"],
+      words: ["НЕ", "Улыбка", "улыбка"],
       reply: '<a href="yrellag.html" target="_blank">привет :)</a>'
     },
     {
@@ -148,6 +148,19 @@ h1 {
       words: ["813742"],
       reply: 'Тебе не сюда это писать бро'
     },
+    {
+      words: ["Минирон макс 2005", "МИНИРОН МАКС 2005"],
+      reply: 'О я👍'
+    },
+    {
+      words: ["блебка"],
+      reply: 'бебка'
+    },
+    {
+      words: ["бедность","БЕДНОСТЬ"],
+      reply: 'НЕ ГОВОРИ ЭТО СЛОВО'
+    },
+    
   ];
 
   function addMessage(text, role, isHTML = false) {
@@ -178,6 +191,24 @@ h1 {
   input.addEventListener("keypress", e => {
     if (e.key === "Enter") sendBtn.click();
   });
+  function handleKeywords(text) {
+  for (const { words, reply } of keywords) {
+    if (words.some(word => text.toLowerCase().includes(word.toLowerCase()))) {
+      addMessage(reply, "other", true);
+
+      // проверяем на "бедность"
+      if (words.includes("бедность") || words.includes("БЕДНОСТЬ")) {
+        document.body.style.transition = "background-color 3s";
+        document.body.style.backgroundColor = "red";
+        setTimeout(() => {
+          window.location.href = "index.html"; // или другая страница
+        }, 700);
+      }
+    }
+  }
+  
+}
+
 </script>
 
 </body>
