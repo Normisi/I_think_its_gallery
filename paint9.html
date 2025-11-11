@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ithinkitsgallery</title>
+  <link rel="stylesheet" href="yrellag.css">
+  </head>
+<body>
+  <main>
+  <div class="recipe-page">
+    
+      <div class="back-wrapper">
+    <a href="yrellag.html" class="back-button">← Назад</a>
+  </div>
+   <div class="gallery-container">
+    <div class="gallery-image">
+      <img class="grassy" src="https://img.goodfon.ru/wallpaper/big/d/b4/trava-zelen-tekstury-tekstura-travy-priroda.webp" alt="Картина">
+    </div>
+
+    <div class="gallery-info">
+      <h1>«Картина номер 9 йоуу»</h1>
+      <p><strong>Автор: цифра 9</strong> </p>
+      <p> картина очень крутая, не все поймут эту картину. подписаться подумать
+</p>
+    </div>
+  </div>
+  </main>
+ <div class="footer-btn" id="footerBtn">
+    Про нас
+  </div>
+
+ 
+  <div class="footer-overlay" id="footerOverlay">
+    <h2>не выделяй этот текст</h2>
+ 
+
+    <button id="closeFooter">Выдели текст сверху </button>
+  </div>
+  
+<script>
+
+  const footerBtn = document.getElementById("footerBtn");
+  const footerOverlay = document.getElementById("footerOverlay");
+  const closeBtn = document.getElementById("closeFooter");
+
+  footerBtn.addEventListener("click", () => {
+    footerOverlay.classList.add("active");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    footerOverlay.classList.remove("active");
+  });
+</script>
+</body>
+</html>
