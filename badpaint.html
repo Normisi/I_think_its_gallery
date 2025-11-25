@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ithinkitsgallery</title>
+  <link rel="stylesheet" href="yrellag.css">
+  </head>
+<body>
+  <main>
+  <div class="recipe-page">
+    
+      <div class="back-wrapper">
+    <a href="yrellag.html" class="back-button">← Назад</a>
+  </div>
+   <div class="gallery-container">
+    <div class="gallery-image">
+      <img src="https://i.ibb.co/5WmqPsVc/image.png" alt="Картина">
+    </div>
+
+    <div class="gallery-info">
+      <h1>«нет»</h1>
+      <p><strong>Автор: мне грустно</strong> </p>
+      <p> ну типо реши хз
+</p>
+    </div>
+  </div>
+  </main>
+ <div class="footer-btn" id="footerBtn">
+    Про нас
+  </div>
+
+ 
+  <div class="footer-overlay" id="footerOverlay">
+    <h2>Забавный факт: у меня реально типо крутой очень дневник и там типо написано что я делаю но я его не покажу</h2>
+ 
+
+    <button id="closeFooter">эта кнопка была сделана 25 ноября 2025 Года  </button>
+  </div>
+  
+<script>
+
+  const footerBtn = document.getElementById("footerBtn");
+  const footerOverlay = document.getElementById("footerOverlay");
+  const closeBtn = document.getElementById("closeFooter");
+
+  footerBtn.addEventListener("click", () => {
+    footerOverlay.classList.add("active");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    footerOverlay.classList.remove("active");
+  });
+</script>
+</body>
+</html>
