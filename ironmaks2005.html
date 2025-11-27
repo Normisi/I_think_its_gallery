@@ -4,14 +4,6 @@
   <meta charset="UTF-8">
   <title>ithinkitsgallery2005</title>
   <link rel="stylesheet" href="gallery.css">
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TN85QTH5TS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TN85QTH5TS');
-</script>
 </head>
 <body>
   <main>
@@ -61,10 +53,11 @@
 </div>
 
 <div class="footer-overlay" id="footerOverlay2">
-  <h2>Скоро...</h2>
+  <h2>turpka</h2>
   <a href="yrellag.html">
     <img src="https://i.postimg.cc/ZR21s1Gr/yrellag.png">
   </a>
+  <button id="unlocktTurpka" class="closeFooter">Разблокировать в галерее</button>
   <button class="closeFooter">Закрыть</button>
 </div>
 
@@ -83,7 +76,7 @@
   // словарь кодов
   const codes = {
     "813742": "footerOverlay1",
-    "19-13-9-12-5": "footerOverlay2",
+    "39481555": "footerOverlay2",
     "прпрчик": "footerOverlay3"
   };
 
@@ -111,8 +104,15 @@
       btn.parentElement.classList.remove("active");
     });
   });
+
+  // обработка кнопки разблокировки turpka
+  const unlocktTurpkaBtn = document.getElementById("unlocktTurpka");
+  if (unlocktTurpkaBtn) {
+    unlocktTurpkaBtn.addEventListener("click", () => {
+      localStorage.setItem('turpkaUnlocked', 'true');
+      alert('turpka разблокирована в галерее!');
+    });
+  }
 </script>
 </body>
 </html>
-
-
