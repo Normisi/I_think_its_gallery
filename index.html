@@ -71,9 +71,20 @@ function wave(p, a = 10, f = 0.05, s = 0.05) {
     }
     animate();
 }
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const mobileWarning = document.getElementById('mobileWarning');
+    
+    // Простая проверка на мобильное устройство (узкий экран)
+    if (window.innerWidth < 768) {
+        mobileWarning.style.display = 'block';
+    } else {
+        mobileWarning.style.display = 'none';
+    }
+});
 </script>
 </body>
 </html>
+
 
 
 
