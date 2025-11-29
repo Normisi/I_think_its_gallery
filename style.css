@@ -78,40 +78,18 @@ p span {
   font-size: 14px;
   z-index: 9999;
 }
-
-/* --- МОБИЛЬНАЯ АДАПТАЦИЯ (600px и менее) --- */
-@media (max-width: 600px) {
-  
-  /* Корректировка двери для центрального расположения */
-  .doors .door {
-    left: 50%; /* Центрируем по горизонтали */
-    top: 50%;
-    width: 50%; /* Увеличиваем размер для удобства нажатия */
-    /* Корректируем смещение, чтобы дверь была посередине, убираем/уменьшаем 3D-эффект */
-    transform: translate(-50%, -50%) rotateX(0deg); 
-  }
-  
-  /* Корректировка анимации открытия */
-  @keyframes open {
-    0% {
-        transform: translate(-50%, -50%) rotateX(0deg);
-    }
-    100% {
-        /* Открываем "вглубь" экрана */
-        transform: translate(-50%, -50%) rotateX(0deg) rotateY(120deg) scale(0.5); 
-    }
-  }
-
-  /* Текст цитаты */
-  p {
-    font-size: 18px; /* Уменьшаем размер текста */
-    width: 90%; /* Шире область, чтобы поместился текст */
-    top: 10%; /* Поднимаем выше, чтобы не перекрывал дверь */
-  }
-  
-  /* Предупреждение */
-  .site-warning {
-    font-size: 12px;
-    padding: 8px 10px;
-  }
+.mobile-warning {
+    display: none; /* Скрываем по умолчанию, JS покажет, если нужно */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffc107; /* Желтый фон для привлечения внимания */
+    color: #333;
+    padding: 10px 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 10000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
