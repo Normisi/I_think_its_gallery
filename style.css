@@ -65,7 +65,6 @@ p {
 p span {
     display: inline-block;
     white-space: pre;
-
 }
 .site-warning {
   position: fixed;
@@ -78,4 +77,41 @@ p span {
   text-align: center;
   font-size: 14px;
   z-index: 9999;
+}
+
+/* --- МОБИЛЬНАЯ АДАПТАЦИЯ (600px и менее) --- */
+@media (max-width: 600px) {
+  
+  /* Корректировка двери для центрального расположения */
+  .doors .door {
+    left: 50%; /* Центрируем по горизонтали */
+    top: 50%;
+    width: 50%; /* Увеличиваем размер для удобства нажатия */
+    /* Корректируем смещение, чтобы дверь была посередине, убираем/уменьшаем 3D-эффект */
+    transform: translate(-50%, -50%) rotateX(0deg); 
+  }
+  
+  /* Корректировка анимации открытия */
+  @keyframes open {
+    0% {
+        transform: translate(-50%, -50%) rotateX(0deg);
+    }
+    100% {
+        /* Открываем "вглубь" экрана */
+        transform: translate(-50%, -50%) rotateX(0deg) rotateY(120deg) scale(0.5); 
+    }
+  }
+
+  /* Текст цитаты */
+  p {
+    font-size: 18px; /* Уменьшаем размер текста */
+    width: 90%; /* Шире область, чтобы поместился текст */
+    top: 10%; /* Поднимаем выше, чтобы не перекрывал дверь */
+  }
+  
+  /* Предупреждение */
+  .site-warning {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
 }
