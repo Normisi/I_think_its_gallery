@@ -3,28 +3,103 @@ body {
     background-image: url(https://i.postimg.cc/FFVQZ96R/1da275b7-3322-46fa-b533-713d95eeca39.png);
 }
 header {
-  height: 100vh; /* хедер занимает весь экран */
-  background-image: url(https://i.postimg.cc/FFVQZ96R/1da275b7-3322-46fa-b533-713d95eeca39.png);
-    background-size: 0.09cm ;     
+    height: 100vh; 
+    background-image: url(https://i.postimg.cc/FFVQZ96R/1da275b7-3322-46fa-b533-713d95eeca39.png);
+    background-size: 0.09cm;         
     background-repeat: round;
 }
 
 main {
-  min-height: 100vh; /* мейн тоже на весь экран */
-  background: url('https://www.meme-arsenal.com/memes/b9debf92f437056df6181aa7c99e4bd8.jpg') center/cover;
-  padding-top: 20px;
+    min-height: 100vh; 
+    background: url('https://www.meme-arsenal.com/memes/b9debf92f437056df6181aa7c99e4bd8.jpg') center/cover;
+    padding-top: 20px;
 }
 .sigma {
-  min-height: 100vh; /* мейн тоже на весь экран */
-  background: aliceblue;
-  padding-top: 20px;
+    min-height: 100vh;
+    background: aliceblue;
+    padding-top: 20px;
+    text-align: center;
 }
 .NOTsigma {
-  min-height: 100vh; 
-  background: rgb(181, 32, 32);
-  padding-top: 20px;
+    min-height: 100vh; 
+    background: rgb(181, 32, 32);
+    padding-top: 20px;
+    color: white;
+    text-align: center;
+}
+.bebka {
+    size:3000px;
+}
+.bebka:hover{
+    transform: scale(5);
 }
 
 
+#turpkaUnlocked {
+    display: none; 
+}
 
 
+#lockedMessage {
+    padding: 15px;
+    border: 2px solid #ffc107; 
+    background-color: #fff3cd;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 350px;
+}
+
+.game-section.unlocked #turpkaUnlocked {
+    display: block; 
+}
+
+.game-section.unlocked #lockedMessage {
+    display: none;
+}
+
+
+.game-container {
+    max-width: 350px;
+    margin: 20px auto; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+#guessInput {
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    width: 50%;
+}
+
+#submitGuess {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.crash-mode {
+    background-color: #dc3545 !important; 
+    color: white;
+    animation: shake 0.5s;
+    padding: 30px !important;
+}
+
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    20%, 60% {transform: translateX(-10px);}
+    40%, 80% {transform: translateX(10px);}
+}
