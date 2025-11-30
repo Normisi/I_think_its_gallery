@@ -53,11 +53,9 @@
 </div>
 
 <div class="footer-overlay" id="footerOverlay2">
-  <h2>turpka</h2>
-  <a href="yrellag.html">
     <img src="https://i.postimg.cc/ZR21s1Gr/yrellag.png">
   </a>
-  <button id="unlocktTurpka" class="closeFooter">Разблокировать в галерее</button>
+  <button id="unlocktTurpka" class="closeFooter">Разблокировать игру в мире ирона макса 2005</button>
   <button class="closeFooter">Закрыть</button>
 </div>
 
@@ -105,14 +103,23 @@
     });
   });
 
-  // обработка кнопки разблокировки turpka
-  const unlocktTurpkaBtn = document.getElementById("unlocktTurpka");
-  if (unlocktTurpkaBtn) {
-    unlocktTurpkaBtn.addEventListener("click", () => {
-      localStorage.setItem('turpkaUnlocked', 'true');
-      alert('turpka разблокирована в галерее!');
-    });
-  }
+ document.addEventListener('DOMContentLoaded', () => {
+    const unlockButton = document.getElementById('unlocktTurpka');
+
+    if (unlockButton) {
+        unlockButton.addEventListener('click', () => {
+            // 1. Устанавливаем флаг в Local Storage
+            localStorage.setItem('turpkaUnlocked', 'true');
+            
+            // 2. Опционально: сообщаем пользователю об активации
+            alert('Игра "turpkaUnlocked" успешно разблокирована!');
+            
+            // 3. Опционально: делаем кнопку неактивной
+            unlockButton.disabled = true;
+            unlockButton.textContent = 'Игра разблокирована!';
+        });
+    }
+});
 </script>
 </body>
 </html>
