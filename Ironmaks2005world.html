@@ -2,34 +2,132 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-  <title>ithinkitsIronMaks2005world</title>
-  <link rel="stylesheet" href="Ironmaks2005world.css">
+    <title>ithinkitsIronMaks2005world</title>
+    <link rel="stylesheet" href="Ironmaks2005world.css">
 </head>
 <body>
 <header>
-  <h1> пр. это мир Ирона Макса 2005 (приблизь очень сильно, прям очнь очнь ты увидишь ирона макса 2005)</h1>
+    <h1> пр. это мир Ирона Макса 2005 (приблизь очень сильно, прям очнь очнь ты увидишь ирона макса 2005)</h1>
 </header>
 <div class="sigma">
-  <h1> комиксы минирона макса 2005</h1>
-  <img src="https://i.postimg.cc/59B7zSvt/image.png" alt="minironmaks2005">
-   <img src="https://i.postimg.cc/QtXxMyqk/image.png" alt="minironmaks2005">
-   <img src="https://i.postimg.cc/fLrbvJqC/image.png" alt="minironmaks2005">
-   <img src="https://i.ibb.co/Z6NZ8GVs/image.png" alt="minironmaks2005">
-   
-   
+    <h1> комиксы минирона макса 2005</h1>
+    <img src="https://i.postimg.cc/59B7zSvt/image.png" alt="minironmaks2005">
+    <img src="https://i.postimg.cc/QtXxMyqk/image.png" alt="minironmaks2005">
+    <img src="https://i.postimg.cc/fLrbvJqC/image.png" alt="minironmaks2005">
+    <img src="https://i.ibb.co/Z6NZ8GVs/image.png" alt="image">
 </div>
 <div class="NOTsigma">
-  <a href="hater.html">
-    нжми если ты НЕ фанат ирона макса 2005 (лохой человек) (ты не заслуживаешь страницы для тебя)
-  </a>
-   
-   
+    <a href="hater.html">
+        нжми если ты НЕ фанат ирона макса 2005 (лохой человек) (ты не заслуживаешь страницы для тебя)
+    </a>
 </div>
+
+<div class="sigma game-section">
+    <div id="lockedMessage">
+        <p>
+          тут ничего нет эм
+        </p>
+    </div>
+
+    <div id="turpkaUnlocked" class="game-container">
+        <h2>Угадай Секретное Число (1-100)</h2>
+        <div class="controls">
+            <input type="number" id="guessInput" placeholder="Введите число..." min="1" max="100">
+            <button id="submitGuess">Проверить</button>
+        </div>
+        <p id="message">Сделайте первую попытку!</p>
+        <p id="attempts">Попыток: 0</p>
+    </div>
+    </div>
 <main>
-  <p> эт всё типо всё типо играйте в онлайн казино 777 уважайте младших и типо ешъте кашу. это всё</p>
+    <p> это пока всё((( больше контента будет чуть позже</p>
 </main>
+
+<script>document.addEventListener('DOMContentLoaded', () => {
+ 
+    const gameSection = document.querySelector('.game-section'); 
+
+    if (localStorage.getItem('turpkaUnlocked') === 'true') {
+      
+        if (gameSection) {
+            gameSection.classList.add('unlocked');
+        }
+        
+       
+        initializeGameLogic();
+    } 
+ 
+});
+function initializeGameLogic() {
+    
+    const input = document.getElementById('guessInput');
+    const button = document.getElementById('submitGuess');
+    const message = document.getElementById('message');
+    const attemptsDisplay = document.getElementById('attempts');
+    const gameContainer = document.getElementById('turpkaUnlocked');
+    
+    // Инициализация
+    const secretNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+
+    function triggerCrash() {
+        gameContainer.classList.add('crash-mode');
+        input.disabled = true;
+        button.disabled = true;
+        
+        const specialText = `
+            <h2>СЕКРЕТ АКТИВИРОВАН!</h2>
+            <p>Вы нашли чит-код! Система перегружена...</p>
+            <p>Нажмите, чтобы продолжить:</p>
+            <a href="Online_k_777" target="_blank" style="color: yellow; font-weight: bold;">
+                ПЕРЕЙТИ К ДРУГОМУ МЕСТУ
+            </a>
+            <p style="margin-top: 15px;">(Особый ID: 2005)</p>
+        `;
+        
+        gameContainer.innerHTML = specialText;
+    }
+
+    function checkGuess() {
+        const userGuess = parseInt(input.value);
+        
+        if (isNaN(userGuess)) {
+            message.textContent = 'Пожалуйста, введите корректное число.';
+            return;
+        }
+
+      
+        if (userGuess === 777) {
+            triggerCrash();
+            return; 
+        }
+
+        attempts++;
+        attemptsDisplay.textContent = `Попыток: ${attempts}`;
+        
+        if (userGuess === secretNumber) {
+            message.textContent = `🎉 ПОБЕДА! Вы угадали число ${secretNumber} за ${attempts} попыток!`;
+            message.style.color = 'green';
+            input.disabled = true;
+            button.disabled = true;
+        } else if (userGuess < secretNumber) {
+            message.textContent = 'Слишком мало! Попробуйте число побольше.';
+            message.style.color = 'orange';
+        } else {
+            message.textContent = 'Слишком много! Попробуйте число поменьше.';
+            message.style.color = 'red';
+        }
+        
+        input.value = '';
+    }
+
+ 
+    button.addEventListener('click', checkGuess);
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            checkGuess();
+        }
+    });
+}</script> 
 </body>
 </html>
-
-
-
