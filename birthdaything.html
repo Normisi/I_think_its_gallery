@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Quest</title>
+    <link rel="stylesheet" href="gallery.css"> <style>
+        .container {
+            text-align: center;
+            padding: 50px;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный фон */
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        #progress {
+            margin: 20px 0;
+            text-align: left;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        #secretContent {
+            display: none; /* Скрыто по умолчанию */
+            margin-top: 30px;
+            padding: 20px;
+            border: 3px solid gold;
+            background-color: #fffacd;
+            font-size: 1.5em;
+            color: maroon;
+        }
+        .found {
+            color: green;
+            font-weight: bold;
+        }
+        .missing {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🎂йо ватсап бро, найди мне ингридиенты для торта, чтобы найти их нажимай на слова в тексте и тогда они будут находиться ну ты ж не глупый сам найдёшь надеюсь слова не глупый да? Ты же не тупой я надеюсь? (напиши в чат боте "с др" если нужны подсказки) </h1>
+    <p id="n">ну типо да найди <span class="quest-button" onclick="handleIngredientClick('мука')">муку</span> и т.д.</p>
+
+    <div id="progress">
+        <h3>Прогресс:</h3>
+        <ul id="ingredientList">
+            <li>Мука: <span id="status-мука" class="missing">НЕ НАЙДЕНО</span></li>
+            <li>Сахар: <span id="status-сахар" class="missing">НЕ НАЙДЕНО</span></li>
+            <li>Яйца: <span id="status-яйца" class="missing">НЕ НАЙДЕНО</span></li>
+            <li>Яд: <span id="status-Яд" class="missing">НЕ НАЙДЕНО</span></li>
+        </ul>
+    </div>
+
+    <div id="secretContent">
+        <h2>🎉 Спасибо что нашёл все ингредиенты! 🎉</h2>
+        <img src="https://i.ibb.co/V0pV6YZc/image.png">
+        </div>
+</div>
+
+<script>
+    const ingredients = ['мука', 'сахар', 'яйца', 'Яд'];
+    const ingredientList = document.getElementById('ingredientList');
+    const secretContent = document.getElementById('secretContent');
+    let foundCount = 0;
+
+    function checkQuestProgress() {
+        foundCount = 0;
+        ingredients.forEach(item => {
+            const statusElement = document.getElementById(`status-${item}`);
+            // Проверяем localStorage
+            const isFound = localStorage.getItem(`quest_${item}`) === 'true';
+
+            if (isFound) {
+                statusElement.textContent = 'НАЙДЕНО!';
+                statusElement.className = 'found';
+                foundCount++;
+            } else {
+                statusElement.textContent = 'НЕ НАЙДЕНО';
+                statusElement.className = 'missing';
+            }
+        });
+
+        // Проверка завершения квеста
+        if (foundCount === ingredients.length) {
+            secretContent.style.display = 'block';
+        } else {
+            secretContent.style.display = 'none';
+        }
+    }
+// Функция для обработки клика по ингредиенту
+function handleIngredientClick(ingredient) {
+    // Проверяем, не найдено ли слово
+    if (localStorage.getItem(`quest_${ingredient}`) !== 'true') {
+        localStorage.setItem(`quest_${ingredient}`, 'true');
+        alert(`Вы нашли ингредиент: ${ingredient}! 🥳\nEHFFF Z NFR HFL!!!`);
+    } else {
+        alert(`Ингредиент "${ingredient}" уже найден`);
+    }
+}
+    window.onload = checkQuestProgress;
+</script>
+
+<a href="ithinkitsgallery.html" class="back-button" style="top: 20px; left: 20px;">← Назад </a>
+
+</body>
+</html>
