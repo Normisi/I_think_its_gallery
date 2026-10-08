@@ -45,7 +45,7 @@ P.S.: <span class="quest-button" onclick="handleIngredientClick('Яд')">Яд</s
   <p id="errorMsg">Неправильный код!</p>
 </div>
 
-<!-- Футеры для разных кодов -->
+
 <div class="footer-overlay" id="footerOverlay1">
   <h2>Узнайте про Ironmaks2005 больше тут!</h2>
   <a href="Ironmaks2005world.html">
@@ -73,7 +73,7 @@ P.S.: <span class="quest-button" onclick="handleIngredientClick('Яд')">Яд</s
   const submitCode = document.getElementById("submitCode");
   const errorMsg = document.getElementById("errorMsg");
 
-  // словарь кодов
+ 
   const codes = {
     "813742": "footerOverlay1",
     "39481555": "footerOverlay2",
@@ -98,7 +98,7 @@ P.S.: <span class="quest-button" onclick="handleIngredientClick('Яд')">Яд</s
     }
   });
 
-  // обработка всех кнопок закрытия
+ 
   document.querySelectorAll(".closeFooter").forEach(btn => {
     btn.addEventListener("click", () => {
       btn.parentElement.classList.remove("active");
@@ -110,20 +110,20 @@ P.S.: <span class="quest-button" onclick="handleIngredientClick('Яд')">Яд</s
 
     if (unlockButton) {
         unlockButton.addEventListener('click', () => {
-            // 1. Устанавливаем флаг в Local Storage
+            
             localStorage.setItem('turpkaUnlocked', 'true');
             
-            // 2. Опционально: сообщаем пользователю об активации
+            
             alert('Игра "turpkaUnlocked" успешно разблокирована!');
             
-            // 3. Опционально: делаем кнопку неактивной
+            
             unlockButton.disabled = true;
             unlockButton.textContent = 'Игра разблокирована!';
         });
     }
 });
 function handleIngredientClick(ingredient) {
-    // Проверяем, не найдено ли слово
+    
     if (localStorage.getItem(`quest_${ingredient}`) !== 'true') {
         localStorage.setItem(`quest_${ingredient}`, 'true');
         alert(`Вы нашли ингредиент: ${ingredient}! 🥳\nEHFFF Z NFR HFL!!!`);
