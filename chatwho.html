@@ -137,8 +137,8 @@ h1 {
       reply: '<a href="yrellag.html" target="_blank">привет :)</a>'
     },
     {
-      words: ["ананас", "Ананас"],
-      reply: 'А это кто?'
+      words: ["Пиво", "пиво"],
+      reply: 'спасибо хорошо'
     },
     {
       words: ["Ирон макс 2005", "ирон макс 2005"],
@@ -200,12 +200,12 @@ h1 {
     if (words.some(word => text.toLowerCase().includes(word.toLowerCase()))) {
       addMessage(reply, "other", true);
 
-      // проверяем на "бедность"
+     
       if (words.includes("бедность") || words.includes("БЕДНОСТЬ")) {
         document.body.style.transition = "background-color 3s";
         document.body.style.backgroundColor = "red";
         setTimeout(() => {
-          window.location.href = "index.html"; // или другая страница
+          window.location.href = "index.html"; 
         }, 700);
       }
     }
